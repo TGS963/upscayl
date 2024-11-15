@@ -238,6 +238,7 @@
     "electron-settings": "^4.0.3",
     "electron-updater": "^6.3.0",
     "eslint-config-next": "^14.2.7",
+    "exiftool-vendored": "^28.3.0",
     "firebase": "^10.11.0",
     "gray-matter": "^4.0.3",
     "jotai": "^2.2.2",

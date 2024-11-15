@@ -20,6 +20,9 @@ import { DEFAULT_MODELS_ID_LIST } from "../../common/models-list";
 import getFilenameFromPath from "../../common/get-file-name";
 import decodePath from "../../common/decode-path";
 import getDirectoryFromPath from "../../common/get-directory-from-path";
+import readMetadata from "../utils/read-metadata";
+import writeMetadata from "../utils/write-metadata";
+import { exiftool } from "../utils/exiftool-instance";
 
 const imageUpscayl = async (event, payload: ImageUpscaylPayload) => {
   const mainWindow = getMainWindow();
@@ -44,6 +47,18 @@ const imageUpscayl = async (event, payload: ImageUpscaylPayload) => {
   let outputDir = decodePath(payload.outputPath);
   const fileNameWithExt = getFilenameFromPath(imagePath);
   const fileName = parse(fileNameWithExt).name;
+
+  // GET METADATA
+  let metadata;
+  try {
+    metadata = await readMetadata(imagePath, exiftool);
+  } catch (error) {
+    logit("❌ Error reading metadata: ", error);
+    mainWindow.webContents.send(
+      ELECTRON_COMMANDS.UPSCAYL_ERROR,
+      "Failed to read metadata.",
+    );
+  }
 
   const outFile =
     outputDir +
@@ -142,6 +157,19 @@ const imageUpscayl = async (event, payload: ImageUpscaylPayload) => {
     };
     const onClose = async () => {
       if (!failed && !stopped) {
+        try {
+          if (metadata) await writeMetadata(outFile, metadata, exiftool);
+        } catch (error) {
+          logit("❌ Error writing metadata: ", error);
+          mainWindow.webContents.send(
+            ELECTRON_COMMANDS.UPSCAYL_ERROR,
+            "Image upscaled successfully but metadata could not be preserved.",
+          );
+          showNotification(
+            "Upscayl",
+            "Image upscaled with warnings - metadata not preserved",
+          );
+        }
         logit("💯 Done upscaling");
         // Free up memory
         upscayl.kill();

@@ -19,6 +19,7 @@ import doubleUpscayl from "./commands/double-upscayl";
 import autoUpdate from "./commands/auto-update";
 import { FEATURE_FLAGS } from "../common/feature-flags";
 import settings from "electron-settings";
+import { exiftool } from "./utils/exiftool-instance";
 
 // INITIALIZATION
 log.initialize({ preload: true });
@@ -64,6 +65,7 @@ app.on("ready", async () => {
 
 // Quit the app once all windows are closed
 app.on("window-all-closed", () => {
+  exiftool.end();
   app.quit();
 });
 

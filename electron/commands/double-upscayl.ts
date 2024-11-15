@@ -22,6 +22,9 @@ import { DEFAULT_MODELS_ID_LIST } from "../../common/models-list";
 import getFilenameFromPath from "../../common/get-file-name";
 import decodePath from "../../common/decode-path";
 import getDirectoryFromPath from "../../common/get-directory-from-path";
+import writeMetadata from "../utils/write-metadata";
+import readMetadata from "../utils/read-metadata";
+import { exiftool } from "../utils/exiftool-instance";
 
 const doubleUpscayl = async (event, payload: DoubleUpscaylPayload) => {
   const mainWindow = getMainWindow();
@@ -42,6 +45,18 @@ const doubleUpscayl = async (event, payload: DoubleUpscaylPayload) => {
   const fileName = parse(fullfileName).name;
 
   const isDefaultModel = DEFAULT_MODELS_ID_LIST.includes(model);
+
+  // GET METADATA
+  let metadata;
+  try {
+    metadata = await readMetadata(imagePath, exiftool);
+  } catch (error) {
+    logit("❌ Error reading metadata: ", error);
+    mainWindow.webContents.send(
+      ELECTRON_COMMANDS.UPSCAYL_ERROR,
+      "Failed to read metadata.",
+    );
+  }
 
   // COPY IMAGE TO TMP FOLDER
 
@@ -124,8 +139,24 @@ const doubleUpscayl = async (event, payload: DoubleUpscaylPayload) => {
   const onClose2 = async (code) => {
     if (!mainWindow) return;
     if (!failed2 && !stopped) {
+      try {
+        if (metadata) await writeMetadata(outFile, metadata, exiftool);
+      } catch (error) {
+        logit("❌ Error writing metadata: ", error);
+        mainWindow.webContents.send(
+          ELECTRON_COMMANDS.UPSCAYL_ERROR,
+          "Image upscaled successfully but metadata could not be preserved.",
+        );
+        showNotification(
+          "Upscayl",
+          "Image upscaled with warnings - metadata not preserved",
+        );
+      }
+
       logit("💯 Done upscaling");
 
+      // Free up memory
+      upscayl.kill();
       mainWindow.setProgressBar(-1);
       mainWindow.webContents.send(
         ELECTRON_COMMANDS.DOUBLE_UPSCAYL_DONE,
@@ -175,7 +206,7 @@ const doubleUpscayl = async (event, payload: DoubleUpscaylPayload) => {
     }
   };
 
-  const onClose = (code) => {
+  const onClose = async () => {
     // IF NOT FAILED
     if (!failed && !stopped) {
       // SPAWN A SECOND PASS
