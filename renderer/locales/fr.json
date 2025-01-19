@@ -2,11 +2,11 @@
   "TITLE": "Upscayl",
   "INTRO": "Présentation de Upscayl Cloud !",
   "HEADER": {
-    "GITHUB_BUTTON_TITLE": "Étoilez-nous sur GitHub 😁",
-    "DESCRIPTION": "Suréchantillonneur d'images AI"
+    "GITHUB_BUTTON_TITLE": "Mettre une ⭐ sur GitHub !",
+    "DESCRIPTION": "Amélioration d'images AI ✨"
   },
   "FOOTER": {
-    "NEWS_TITLE": "NOUVELLES UPSCAYL",
+    "NEWS_TITLE": "ACTUALITÉS UPSCAYL",
     "COPYRIGHT": "Droits d'auteur ©",
     "TITLE": "Par ",
     "LINK_TITLE": "L'équipe Upscayl"
@@ -45,8 +45,8 @@
       "WEBP": "WEBP"
     },
     "IMAGE_SCALE": {
-      "TITLE": "Échelle de l'image",
-      "DESCRIPTION": "Tout ce qui dépasse 4X (sauf 16X Double Upscayl) ne fait que redimensionner l'image et n'utilise pas le suréchantillonnage AI.",
+      "TITLE": "Redimensionnement de l'image",
+      "DESCRIPTION": "Tout ce qui dépasse 4X (sauf 16X Double Upscayl) ne fait que redimensionner l'image et n'utilise pas l'améliorateur AI.",
       "WARNING": "Tout ce qui dépasse 5X peut causer des problèmes de performance sur certains appareils !",
       "ADDITIONAL_WARNING": "Cela peut causer des problèmes de performance sur certains appareils !"
     },
@@ -56,7 +56,7 @@
       "NO_LOGS": "Aucun journal à afficher"
     },
     "OVERWRITE_TOGGLE": {
-      "TITLE": "ÉCRASER LE SURÉCHANTILLONNAGE PRÉCÉDENT",
+      "TITLE": "ÉCRASER LE RÉSULTAT PRÉCÉDENT",
       "DESCRIPTION": "Si activé, Upscayl traitera à nouveau l'image au lieu de la charger directement."
     },
     "RESET_SETTINGS": {
@@ -105,8 +105,8 @@
   "APP": {
     "TITLE": "Upscayl",
     "BATCH_MODE": {
-      "TITLE": "Suréchantillonnage par lot",
-      "DESCRIPTION": "Cela vous permettra de suréchantillonner tous les fichiers d'un dossier en une seule fois"
+      "TITLE": "Amélioration par lot",
+      "DESCRIPTION": "Cela vous permettra d'améliorer tous les fichiers d'un dossier en une seule fois"
     },
     "FILE_SELECTION": {
       "TITLE": "Étape 1",
@@ -165,34 +165,34 @@
     },
     "SCALE_SELECTION": {
       "TITLE": "Étape 4",
-      "FROM_TITLE": "Suréchantillonner de ",
+      "FROM_TITLE": "Améliorer de ",
       "TO_TITLE": " à ",
       "NO_OUTPUT_FOLDER_ALERT": "Veuillez d'abord sélectionner un dossier de sortie",
-      "START_BUTTON_TITLE": "Suréchantillonner 🚀",
-      "IN_PROGRESS_BUTTON_TITLE": "Suréchantillonnage ⏳"
+      "START_BUTTON_TITLE": "Améliorer 🚀",
+      "IN_PROGRESS_BUTTON_TITLE": "Amélioration ⏳"
     },
     "MORE_OPTIONS_DRAWER": {
       "RESET_BUTTON_TITLE": "Réinitialiser l'image",
       "LENS_VIEW_TITLE": "Vue de la lentille",
       "SLIDER_VIEW_TITLE": "Vue du curseur",
       "ZOOM_AMOUNT_TITLE": "Niveau de zoom",
-      "TOTAL_UPSCAYLS": "Total des suréchantillonnages",
-      "TOTAL_BATCH_UPSCAYLS": "Total des suréchantillonnages par lot",
-      "TOTAL_IMAGE_UPSCAYLS": "Total des suréchantillonnages d'images",
-      "TOTAL_DOUBLE_UPSCAYLS": "Total des doubles suréchantillonnages",
-      "AVERAGE_UPSCAYL_TIME": "Temps moyen de suréchantillonnage",
-      "LAST_UPSCAYL_DURATION": "Durée du dernier suréchantillonnage",
+      "TOTAL_UPSCAYLS": "Total des améliorations",
+      "TOTAL_BATCH_UPSCAYLS": "Total des améliorations par lot",
+      "TOTAL_IMAGE_UPSCAYLS": "Total des améliorations d'images",
+      "TOTAL_DOUBLE_UPSCAYLS": "Total des doubles améliorations",
+      "AVERAGE_UPSCAYL_TIME": "Temps moyen d'amélioration",
+      "LAST_UPSCAYL_DURATION": "Durée de la dernière amélioration",
       "LAST_USED_AT": "Dernière utilisation"
     },
     "PROGRESS_BAR": {
-      "BATCH_UPSCAYL_IN_PROGRESS_TITLE": "Suréchantillonnage par lot en cours :",
-      "IN_PROGRESS_TITLE": "Faire la magie du suréchantillonnage...",
+      "BATCH_UPSCAYL_IN_PROGRESS_TITLE": "Amélioration par lot en cours :",
+      "IN_PROGRESS_TITLE": "Faire la magie de l'IA...",
       "STOP_BUTTON_TITLE": "ARRÊTER"
     },
     "RESET_BUTTON_TITLE": "Réinitialiser",
     "RIGHT_PANE_INFO": {
-      "SELECT_FOLDER": "Sélectionnez un dossier à suréchantillonner",
-      "SELECT_IMAGE": "Sélectionnez une image à suréchantillonner",
+      "SELECT_FOLDER": "Sélectionnez un dossier à améliorer",
+      "SELECT_IMAGE": "Sélectionnez une image à améliorer",
       "SELECT_FOLDER_DESCRIPTION": "Assurez-vous que le dossier ne contient rien d'autre que des images PNG, JPG, JPEG et WEBP.",
       "SELECT_IMAGES_DESCRIPTION": "Sélectionnez ou glissez-déposez une image PNG, JPG, JPEG ou WEBP.",
       "PASTE_IMAGE_DESCRIPTION": "Appuyez sur Ctrl+V ou ⌘+V pour coller l'image depuis le presse-papiers"
@@ -201,16 +201,16 @@
       "PROCESSING_TITLE": "Traitement de l'image...",
       "SCALING_CONVERTING_TITLE": "Mise à l'échelle et conversion de l'image...",
       "WAIT_TITLE": "Patientez...",
-      "SUCCESS_TITLE": "Suréchantillonnage réussi !",
+      "SUCCESS_TITLE": "Amélioration réussie !",
       "BATCH": {
         "SELECTED_FOLDER_TITLE": "Dossier sélectionné :",
         "DONE_TITLE": "Tout est terminé !",
-        "OPEN_UPSCAYLED_FOLDER_TITLE": "Ouvrir le dossier suréchantillonné"
+        "OPEN_UPSCAYLED_FOLDER_TITLE": "Ouvrir le dossier amélioré"
       }
     },
     "SLIDER": {
       "ORIGINAL_TITLE": "Original",
-      "UPSCAYLED_TITLE": "Suréchantillonné"
+      "UPSCAYLED_TITLE": "Amélioré"
     },
     "DIALOG_BOX": {
       "CLOSE": "Fermer"
@@ -260,7 +260,7 @@
   "UPSCAYL_CLOUD": {
     "COMING_SOON": "Bientôt disponible !",
     "CATCHY_PHRASE_1": "Plus d'erreurs, de problèmes matériels, de compromis sur la qualité ou de longs temps de chargement !",
-    "CATCHY_PHRASE_2": "🌐 Suréchantillonnez n'importe où, n'importe quand, sur n'importe quel appareil\n☁️ Pas de carte graphique ou de matériel requis\n👩 Amélioration du visage\n🦋 Plus de 10 modèles au choix\n🏎 5x plus rapide que Upscayl Desktop\n🎞 Suréchantillonnage vidéo\n💰 Utilisation commerciale\n😴 Suréchantillonnez pendant que vous dormez",
+    "CATCHY_PHRASE_2": "🌐 Amélioration possible partout, à tout moment, sur tout appareil\n☁️ Pas de carte graphique ou de matériel requis\n👩 Amélioration du visage\n🦋 Plus de 10 modèles au choix\n🏎 5x plus rapide que Upscayl Desktop\n🎞 Amélioration vidéo\n💰 Utilisation commerciale\n😴 Amélioration pendant votre sommeil",
     "ALREADY_REGISTERED_ALERT": "Merci {name} ! Il semble que votre email ait déjà été enregistré :D Si ce n'est pas le cas, veuillez réessayer.",
     "ADD_SUCCESS": "Merci de rejoindre la liste d'attente ! Nous vous informerons lorsque Upscayl Cloud sera prêt pour vous.",
     "INCORRECT_FIELDS_ALERT": "Veuillez remplir correctement tous les champs.",
@@ -286,7 +286,7 @@
     },
     "STEP_4": {
       "TITLE": "Vous êtes prêt ! 🎉",
-      "DESCRIPTION": "Vous êtes prêt à commencer à suréchantillonner des images avec Upscayl !"
+      "DESCRIPTION": "Vous êtes prêt à commencer à améliorer des images avec Upscayl !"
     }
   }
 }
